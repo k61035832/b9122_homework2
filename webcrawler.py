@@ -14,7 +14,7 @@ while len(urls) > 0 and len(opened) < maxNumUrl:
     # DEQUEUE A URL FROM urls AND TRY TO OPEN AND READ IT
     try:
         curr_url=urls.pop(0)
-        print("num. of URLs in stack: %d " % len(urls))
+        print("Number of URLs in stack: %d " % len(urls))
         print("Trying to access= "+curr_url)
         req = urllib.request.Request(curr_url,headers={'User-Agent': 'Mozilla/5.0'})
         webpage = urllib.request.urlopen(req).read()
@@ -45,6 +45,7 @@ while len(urls) > 0 and len(opened) < maxNumUrl:
         else:
             print("######")
 
+print("### DONE ###")
 print("num. of URLs seen = %d, and scanned = %d" % (len(seen), len(opened)))
 print("List of seen URLs:")
 for seen_url in seen:
